@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
     public float speed = 1.0f;
@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rigidbody2d;
 
-    private CoillderController colliderController;
+    private ColliderController colliderController;
 
     private InteractionCollider interactionCollider;
 
@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
     {
         moveAction = playerInputAction.FindActionMap("Player").FindAction("Move");
         rigidbody2d = GetComponent<Rigidbody2D>();
-        colliderController = GetComponentInChildren<CoillderController>();
+        colliderController = GetComponentInChildren<ColliderController>();
         interactionCollider = GetComponentInChildren<InteractionCollider>();
     }
 
