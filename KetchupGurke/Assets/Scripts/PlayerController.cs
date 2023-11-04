@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,23 +12,30 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rigidbody2d;
 
-    private ColldierController colldierController;
+    private CoillderController colliderController;
+
+    private InteractionCollider interactionCollider;
 
     void OnEnable()
     {
-        playerInputAction.FindActionMap("Player").Enable();
+        var playerActionMap = playerInputAction.FindActionMap("Player");
+        playerActionMap.Enable();
+        playerActionMap.FindAction("Interact").performed += OnInteract;
     }
 
     void OnDisable()
     {
-        playerInputAction.FindActionMap("Player").Disable();
+        var playerActionMap = playerInputAction.FindActionMap("Player");
+        playerActionMap.Disable();
+        playerActionMap.FindAction("Interact").performed -= OnInteract;
     }
 
     void Awake()
     {
         moveAction = playerInputAction.FindActionMap("Player").FindAction("Move");
         rigidbody2d = GetComponent<Rigidbody2D>();
-        colldierController = GetComponentInChildren<ColldierController>();
+        colliderController = GetComponentInChildren<CoillderController>();
+        interactionCollider = GetComponentInChildren<InteractionCollider>();
     }
 
     void FixedUpdate()
@@ -39,7 +44,16 @@ public class PlayerController : MonoBehaviour
         if (movementVector.magnitude > 0)
         {
             rigidbody2d.MovePosition(transform.position + (Vector3)movementVector);
-            colldierController.FacingAngle = Vector2.SignedAngle(transform.right, movementVector);
+            colliderController.FacingAngle = Vector2.SignedAngle(transform.right, movementVector);
+        }
+    }
+
+    void OnInteract(InputAction.CallbackContext context)
+    {
+        var collidedGameObjects = interactionCollider.collidedGameObjects;
+        foreach (var gameObject in collidedGameObjects)
+        {
+            gameObject.GetComponent<Interactable>().Interact();
         }
     }
 

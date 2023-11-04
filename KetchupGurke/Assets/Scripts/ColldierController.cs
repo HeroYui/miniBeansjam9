@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColldierController : MonoBehaviour
+public class CoillderController : MonoBehaviour
 {
 
     private float _facingAngle;
