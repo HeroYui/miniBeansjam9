@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
 
     public InputActionAsset playerInputAction;
 
+    private DialogManager dialogManager;
+
     private InputAction moveAction;
 
     private Rigidbody2D rigidbody2d;
@@ -20,14 +22,16 @@ public class PlayerController : MonoBehaviour
     {
         var playerActionMap = playerInputAction.FindActionMap("Player");
         playerActionMap.Enable();
-        playerActionMap.FindAction("Interact").performed += OnInteract;
+        playerActionMap.FindAction("Use").performed += OnUse;
+        playerActionMap.FindAction("Talk").performed += OnTalk;
     }
 
     void OnDisable()
     {
         var playerActionMap = playerInputAction.FindActionMap("Player");
         playerActionMap.Disable();
-        playerActionMap.FindAction("Interact").performed -= OnInteract;
+        playerActionMap.FindAction("Use").performed -= OnUse;
+        playerActionMap.FindAction("Talk").performed -= OnTalk;
     }
 
     void Awake()
@@ -36,10 +40,14 @@ public class PlayerController : MonoBehaviour
         rigidbody2d = GetComponent<Rigidbody2D>();
         colliderController = GetComponentInChildren<ColliderController>();
         interactionCollider = GetComponentInChildren<InteractionCollider>();
+        dialogManager = FindObjectOfType<DialogManager>();
     }
 
     void FixedUpdate()
     {
+        if (dialogManager.isActive)
+            return;
+
         var movementVector = Time.deltaTime * speed * moveAction.ReadValue<Vector2>().normalized;
         if (movementVector.magnitude > 0)
         {
@@ -48,12 +56,37 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void OnInteract(InputAction.CallbackContext context)
+    void OnUse(InputAction.CallbackContext context)
     {
+        if (dialogManager.isActive)
+            return;
+
         var collidedGameObjects = interactionCollider.collidedGameObjects;
         foreach (var gameObject in collidedGameObjects)
         {
-            gameObject.GetComponent<Interactable>().Interact();
+            if (gameObject.TryGetComponent<UsageTrigger>(out var usageTrigger))
+            {
+                usageTrigger.Use();
+            }
+        }
+    }
+
+    void OnTalk(InputAction.CallbackContext callbackContext)
+    {
+        if (!dialogManager.isActive)
+        {
+            var collidedGameObjects = interactionCollider.collidedGameObjects;
+            foreach (var gameObject in collidedGameObjects)
+            {
+                if (gameObject.TryGetComponent<DialogTrigger>(out var dialogTrigger))
+                {
+                    dialogManager.OpenDialog(dialogTrigger.messages, dialogTrigger.actors);
+                }
+            }
+        }
+        else
+        {
+            dialogManager.NextMessage();
         }
     }
 
