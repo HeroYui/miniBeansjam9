@@ -4,19 +4,10 @@ using UnityEngine;
 
 public class CrackSound : MonoBehaviour
 {
-    private Animator animator;
+    public AudioSource crackSoundSource;
 
-    
-    // Start is called before the first frame update
-    void Start()
+    void PlayCrackSound()
     {
-        animator = GetComponent<Animator>();
-       
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //if()
+        crackSoundSource.enabled = true;
     }
 }
