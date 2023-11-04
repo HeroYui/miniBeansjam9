@@ -20,11 +20,10 @@ Kondition:
 Aktöre:Fuchsi, 0;
 Rollenspielanweisungen: Fuchsi (monologisiert zu Mia, mitfühlend und ermutigend)
 Kondition: Keine/Spiel start auto Dialog
-0: Mia, hör zu. Wir sind in einer beunruhigenden Situation, das ist wahr, aber du hast die Fähigkeit, dich und deine Familie zu beschützen. -> null
-0: Hier ist der Plan: Du bleibst leise, versteckst dich und beobachtest weiterhin den Einbrecher. Aber wir dürfen nicht vergessen, dass deine Eltern die ersten sind, die von der Bedrohung erfahren sollten. -> null
+0: Mia, hör mal, wir haben 'ne schwierige Situation, aber du kannst das! Du kannst deine Familie schützen. -> null
+0: Deine Eltern müssen als Erste davon erfahren, verstehst du? Schleich dich in ihr Zimmer und weck sie. -> null
 0: Glaub mir, sie werden alles tun, um uns sicher zu halten. Also, wenn du kannst, schleiche dich in ihr Zimmer und wecke sie. Aber pass auf, nicht gesehen zu werden. -> null
-0: Denk daran, wir haben diese ungewöhnliche Verbindung zu den Haushaltsgegenständen, die uns hier helfen kann. Jetzt ist es an der Zeit, diese besonderen Fähigkeiten zu nutzen und mit ihnen zu reden. -> null
-0: Du bist stark, Mia. Ich bin immer bei dir, und zusammen schaffen wir das. Deine Eltern werden stolz auf dich sein, und der Einbrecher wird keine Chance haben, wenn wir gemeinsam handeln. Los geht's!
+Aber pass auf, der Einbrecher darf uns nicht sehen. Wir können unsere ungewöhnliche Verbindung zu Haushaltsgegenständen nutzen und mit ihnen sprechen. Die helfen uns. Gemeinsam schaffen wir das, Mia. Los geht's!
 
 ---
 ## Leise Schritte für die Rettung (Akt I)
