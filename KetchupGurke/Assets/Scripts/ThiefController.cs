@@ -26,6 +26,11 @@ public class ThiefController : MonoBehaviour
 
     private bool isInspecting = false;
 
+    private Animator animator;
+    private enum MovementState { left, right, up, down, idle }
+
+    private Transform lastTransform;
+
     IEnumerator Turn()
     {
         isTurning = true;
@@ -62,6 +67,8 @@ public class ThiefController : MonoBehaviour
         rigidbody2d = GetComponent<Rigidbody2D>();
         interactionColliderController = GetComponentInChildren<InteractionColliderController>();
         interactionCollider = GetComponentInChildren<InteractionCollider>();
+        animator = GetComponentInChildren<Animator>();
+        lastTransform = transform;
 
         path = new List<Vector3>();
         var lineRenderer = GetComponentInChildren<LineRenderer>();
@@ -103,5 +110,49 @@ public class ThiefController : MonoBehaviour
             currentTargetPosIndex = path.Count - 1 > currentTargetPosIndex ? currentTargetPosIndex + 1 : 0;
             StartCoroutine(Turn());
         }
+
+        
+        UpdateAnimation(getDeltaVector());
+        lastTransform = transform;
+
     }
+
+    private Vector2 getDeltaVector()
+    {
+        Vector3 heading = transform.position - lastTransform.position;
+        Vector2 result = new Vector2(heading.x, heading.y);
+        result.Normalize();
+        return result;
+    }
+
+    private void UpdateAnimation(Vector2 movementVector)
+    {
+        MovementState state;
+        var directionX = movementVector.x;
+        var directionY = movementVector.y;
+
+        if (directionX > 0f)
+        {
+            state = MovementState.right;
+        }
+        else if (directionX < 0f)
+        {
+            state = MovementState.left;
+        }
+        else if (directionY > 0f)
+        {
+            state = MovementState.up;
+        }
+        else if (directionY < 0f)
+        {
+            state = MovementState.down;
+        }
+        else
+        {
+            state = MovementState.idle;
+        }
+
+        animator.SetInteger("state", (int)state);
+    }
+
 }
