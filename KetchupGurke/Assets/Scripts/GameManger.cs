@@ -6,6 +6,8 @@ public class GameManger : MonoBehaviour
 {
     public DialogManager dialogManager;
 
+    public BookCounter bookCounter;
+
     public List<IDialog> dialogs;
 
     private GameState gameState;
@@ -24,6 +26,7 @@ public class GameManger : MonoBehaviour
             {
                 dialog.UpdateIsCurrentDialog(gameState);
             }
+            bookCounter.UpdateBookCounter(gameState.booksToFind);
         }
     }
 

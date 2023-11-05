@@ -26,6 +26,8 @@ public class DialogManager : MonoBehaviour
         CurrentDialogMessage = CurrentDialog.Messages[currentDialogMessageIndex];
         talkingText.text = CurrentDialogMessage.GetInterpolatedMessage(gameState);
         actorNameText.text = CurrentDialog.Actors[CurrentDialogMessage.ActorId].name;
+        LeanTween.alphaText(talkingText.rectTransform, 0.0f, 0f);
+        LeanTween.alphaText(talkingText.rectTransform, 1.0f, 0.5f);
     }
 
     public void OpenDialog(IDialog dialog, GameState gameState)
