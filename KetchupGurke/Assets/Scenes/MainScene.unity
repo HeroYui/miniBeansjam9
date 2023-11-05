@@ -601,8 +601,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.94439995, y: -0.055150032, z: 0}
-    m_Extent: {x: 1.0996, y: 1.77615, z: 0}
+    m_Center: {x: 0.9462, y: -0.04120004, z: 0}
+    m_Extent: {x: 1.0884, y: 1.7729, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -1144,7 +1144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f81f77f35380f294ca43522be6bb8ac4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 2
   inspectTime: 10
 --- !u!50 &1141332049
 Rigidbody2D:
