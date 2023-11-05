@@ -98,5 +98,4 @@ public class FuchsiErmutigtMiaDialogMessage3 : IDialogMessage
         gameState.initialDialogDone = true;
         return true;
     }
-
 }
