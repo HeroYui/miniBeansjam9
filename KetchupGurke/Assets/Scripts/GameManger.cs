@@ -58,6 +58,9 @@ public class GameManger : MonoBehaviour
             new BuecherregalVsPhilosophie(),//Akt2
             new WoKommtDasDennHer(),
             new UnbequemesSofa(),
+            new StuehleSindKeineGutenVerstecke(),
+            new KlappeZuSchrankTot(),
+
         };
     }
 

@@ -2,12 +2,14 @@
 public class GameState
 {
 
-    public bool initialDialogDone;
+    public bool initialDialogDone = false;
 
-    public bool talkedToBuecherRegalForTheFirstTime;
+    public bool talkedToBuecherRegalForTheFirstTime = false;
 
     public int booksToFind;
 
-    public bool SofaBooks;
+    public bool SofaBooks = false;
+
+    public bool SchrankBooks = false;
 
 }
