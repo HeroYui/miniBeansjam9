@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 00a1802ec48246640af733a61854627b
+guid: 24197f87d9ddd864dae558af11a45d00
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects:
   - first:
       type: UnityEngine:AnimationClip
       assembly: UnityEngine.AnimationModule
-      name: mia_character_side_rechts_Clip
-    second: {fileID: 7400000, guid: 482e024b90d2b1244bfac290aa3d0555, type: 2}
+      name: mia_character_idle_Clip
+    second: {fileID: 7400000, guid: 64c6c3903a348234780de79cf4149f3d, type: 2}
   serializedVersion: 2
   userData: 
   assetBundleName: 
@@ -100,7 +100,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638347954433599446
+  platformSettingsDirtyTick: 638347961064346998
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -124,18 +124,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: mia_character_side_rechts_Frame_0
+  - name: mia_character_idle_Frame_0
     originalName: 
-    pivot: {x: 0.53846157, y: -0.07692308}
+    pivot: {x: 0.5, y: -0.074074075}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 26
-      height: 26
-    spriteID: 7707dc3eb79fc5045b5b29a3976b5f08
+      width: 30
+      height: 27
+    spriteID: 98eeb13a82d86df49a6b7994a30cfa07
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -144,58 +144,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: mia_character_side_rechts_Frame_1
+  - name: mia_character_idle_Frame_1
     originalName: 
-    pivot: {x: 0.53846157, y: -0.07692308}
+    pivot: {x: 0.5, y: -0.074074075}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 38
-      width: 26
-      height: 26
-    spriteID: 91b019d190bdaf04c8142c6b8d2c6e53
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 38}
-  - name: mia_character_side_rechts_Frame_2
-    originalName: 
-    pivot: {x: 0.53846157, y: -0.07692308}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 72
-      width: 26
-      height: 26
-    spriteID: 4703acb94dda33043b601f2b2b212d51
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 72}
-  - name: mia_character_side_rechts_Frame_3
-    originalName: 
-    pivot: {x: 0.53846157, y: -0.07692308}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 38
+      x: 42
       y: 4
-      width: 26
-      height: 26
-    spriteID: 43029b93d2adc4a4c874dac0650fe0ae
+      width: 30
+      height: 27
+    spriteID: 2d36624c48197c843986ba6c9b3391a0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -203,48 +163,88 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 38, y: 4}
+    uvTransform: {x: 42, y: 4}
+  - name: mia_character_idle_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: -0.074074075}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 4
+      width: 30
+      height: 27
+    spriteID: 68ea1aa22698d2c479acb5756984fc35
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 80, y: 4}
+  - name: mia_character_idle_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: -0.074074075}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 39
+      width: 30
+      height: 27
+    spriteID: 18a87238cd68c1345b4e02a841465f1c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 39}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1428805685
-    name: mia_character_side_rechts
+    guid: 106966022
+    name: mia_character_idle
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: mia_character_side_rechts_Frame_0
+    - name: mia_character_idle_Frame_0
       frameIndex: 0
       cellRect:
-        x: 2
+        x: 1
         y: 2
-        width: 26
-        height: 26
-      spriteId: 7707dc3eb79fc5045b5b29a3976b5f08
-    - name: mia_character_side_rechts_Frame_1
+        width: 30
+        height: 27
+      spriteId: 98eeb13a82d86df49a6b7994a30cfa07
+    - name: mia_character_idle_Frame_1
       frameIndex: 1
       cellRect:
-        x: 2
+        x: 1
         y: 2
-        width: 26
-        height: 26
-      spriteId: 91b019d190bdaf04c8142c6b8d2c6e53
-    - name: mia_character_side_rechts_Frame_2
+        width: 30
+        height: 27
+      spriteId: 2d36624c48197c843986ba6c9b3391a0
+    - name: mia_character_idle_Frame_2
       frameIndex: 2
       cellRect:
-        x: 2
+        x: 1
         y: 2
-        width: 26
-        height: 26
-      spriteId: 4703acb94dda33043b601f2b2b212d51
-    - name: mia_character_side_rechts_Frame_3
+        width: 30
+        height: 27
+      spriteId: 68ea1aa22698d2c479acb5756984fc35
+    - name: mia_character_idle_Frame_3
       frameIndex: 3
       cellRect:
-        x: 2
+        x: 1
         y: 2
-        width: 26
-        height: 26
-      spriteId: 43029b93d2adc4a4c874dac0650fe0ae
+        width: 30
+        height: 27
+      spriteId: 18a87238cd68c1345b4e02a841465f1c
     linkedCells: []
     parentIndex: -1
   platformSettings:
