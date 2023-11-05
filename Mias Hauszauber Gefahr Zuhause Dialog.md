@@ -61,7 +61,7 @@ Rollenspielanweisungen: Tür(etwas genervt und empört)
 Aktöre:Fuchsi,0;Sofa,1;
 Kondition: Keine/Akt I
 Rollenspielanweisungen: Fuchsi(Drängend);Sofa(relaxed aber lässt sich nicht unter kriegen und weiß was es will)
-1: ~Hmmm~ Mia es ist aber schon etwas spät um eine Kissenburg aus mir zu Bauen.
+1: ~Hmmm~ Mia es ist aber schon etwas spät um eine Kissenburg aus mir zu bauen.
 0: Kissenburgen verteidigen nur gegen Fantasie Drachen. Wir müssen weiter Mama und Papa warnen.
 
 ---
@@ -78,7 +78,7 @@ Rollenspielanweisungen:Fuchsi(Drängend);Stuhl(säufzend schicksal akzeptierend)
 Aktöre:Fuchsi,0;Esstisch,1;Stuhl2,2;
 Kondition:Keine/AktI
 Rollenspielanweisungen:Fuchsi(Drängend);
-0: Seit die Beziehung zwischen Quietschie dem Stuhl und dem Esstisch auseinandergeschoben wurde sind beide Beledigte Leberwürste und Stumm
+0: Seit die Beziehung zwischen Quietschie dem Stuhl und dem Esstisch auseinandergeschoben wurde sind beide Beledigte Leberwürste und Stumm.
 
 ---
 
