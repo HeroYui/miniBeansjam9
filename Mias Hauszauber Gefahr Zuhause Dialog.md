@@ -10,8 +10,9 @@ tags:
 ## Dialog Prefab
 ---
 ### Titel:
-Aktöre:
+Aktöre:Fuchsi,0;
 Kondition:
+Rollenspielanweisungen:Fuchsi(Drängend);
 0: Erdbeeren sind nice -> null
 
 ---
@@ -48,6 +49,38 @@ Kondition:Keine/Akt I
 
 ---
 
+### Titel: Eine Tür die ihren Job zu ernst nimmt
+Aktöre:Fuchsi,0;Tür,1;
+Kondition: MitTürGeredet=false
+Rollenspielanweisungen: Tür(etwas genervt und empört)
+1: Ey, schon mal was von von anklopfen gehört? -> MitTürGeredet=true; Tür geht auf wie normale Tür
+
+---
+
+### Titel: Kissenburg Drama
+Aktöre:Fuchsi,0;Sofa,1;
+Kondition: Keine/Akt I
+Rollenspielanweisungen: Fuchsi(Drängend);Sofa(relaxed aber lässt sich nicht unter kriegen und weiß was es will)
+1: ~Hmmm~ Mia es ist aber schon etwas spät um eine Kissenburg aus mir zu Bauen.
+0: Kissenburgen verteidigen nur gegen Fantasie Drachen. Wir müssen weiter Mama und Papa warnen.
+
+---
+
+### Titel: Die Leiden des Stuhls
+Aktöre:Fuchsi,0;Stuhl1,1;
+Kondition:Keine/Akt I
+Rollenspielanweisungen:Fuchsi(Drängend);Stuhl(säufzend schicksal akzeptierend)
+1: Ich bin voll belastet...ständig sitzen Leute auf mir drauf. Vor allem die Glitzersteinchen auf Tante Valentinas Hose lassen mich danach immer so zerdellt aussehen. Etwas wie der Mond.
+0: Ich glaube nicht, dass und Knarzi der Stuhl helfen kann zu Mama und Papa zu kommen.
+
+---
+### Titel: Beziehungsprobleme
+Aktöre:Fuchsi,0;Esstisch,1;Stuhl2,2;
+Kondition:Keine/AktI
+Rollenspielanweisungen:Fuchsi(Drängend);
+0: Seit die Beziehung zwischen Quietschie dem Stuhl und dem Esstisch auseinandergeschoben wurde sind beide Beledigte Leberwürste und Stumm
+
+---
 ## Ein Bücherwurm wäre Praktisch. (Akt II)
 
 ### Titel: Bücherregal vs Philosophie
@@ -58,7 +91,40 @@ Kondition:Akt II && $BücherDieZuVerteielnSind >0
 
 ---
 
-### Titel: Bücherregal vs Philosophie
+### Titel: Wo kommt das denn her?
+Aktöre:Fuchsi,0;Sofa,1;
+Kondition: Akt II && SofaBücher=false
+Rollenspielanweisungen: Fuchsi(Drängend);Sofa(relaxed aber lässt sich nicht unter kriegen und weiß was es will)
+0: Hey, Sofa! Wir müssen Bücher aus dem Regal verstecken, damit der Einbrecher sie nicht sieht.
+1: ~Hmmm~ Fuchsi, das ist spannend! Aber bevor wir das machen, die Krümmel pieksen immer so kannst du mal meine ritzen sauber machen?
+0: Machen wir während wir die Bücher in deine Ritzen schieben.
+0: Oh. Was haben wir denn da? Rex der Stegosaurus, das Reittier von Prinzessin Quarkini. Wie kommt der denn hier hin?
+1: ~Hmmm~ ich fühle mich so voll und echt ungemütlich.-> SofaBücher=true;BücherDieZuVerteielnSind-=7;
+0: Kein wunder du bist ja auch mit 7 Büchern gefüllt. Keine Angst später Räumen wir die wieder auf. Jetzt fehlen noch $BücherDieZuVerteielnSind Bücher.
+1: ~Hmmm~ Das sagt ihr immer.... 
+
+---
+
+### Titel: Unbequemes Sofa
+Aktöre:Fuchsi,0;Sofa,1;
+Kondition: Akt II && SofaBücher=true
+Rollenspielanweisungen: Fuchsi(Drängend);Sofa(relaxed abet etwas betrübt)
+1: ~Hmmm~ So unbequem war ich ja noch nie...
+0: Kein wunder du bist ja auch mit 7 Büchern gefüllt. Keine Angst später Räumen wir die wieder auf. Jetzt fehlen noch $BücherDieZuVerteielnSind Bücher.
+
+---
+
+### Titel: Stühle sind keine guten Verstecke
+Aktöre:Fuchsi,0;Stuhl1,1;
+Kondition:Akt II
+Rollenspielanweisungen:Fuchsi(Drängend);Stuhl(säufzend schicksal akzeptierend)
+0: Kannst du Bücher für uns verstecken Knarzi?
+1: Na klar! Aber wehe du pupst mich wieder an!
+0: Hmm. Das Buch ist leider immer gut Sichtbar ob auf oder unter dem Stuhl. Kein gutes Versteck.
+
+---
+
+### Titel: Bergsteigen
 Aktöre:Fuchsi,0;Bücherregal,1;
 Rollenspielanweisungen: Fuchsi (Verständnisvoll doch drängend); Bücherregal (Leicht und beschwingt)
 Kondition:Akt II && $BücherDieZuVerteielnSind <=0
