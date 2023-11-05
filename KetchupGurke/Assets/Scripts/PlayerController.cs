@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
         if (!gameManager.IsConversationInProgress)
         {
             var collidedGameObjects = interactionCollider.collidedGameObjects;
-            var gameObject = collidedGameObjects.FirstOrDefault(c => c.CompareTag("Mia"));
+            var gameObject = collidedGameObjects.FirstOrDefault(c => c.CompareTag("Mia") || c.CompareTag("MiaAndThief"));
             if (gameObject != null)
             {
                 gameManager.StartDialogWith(gameObject);
