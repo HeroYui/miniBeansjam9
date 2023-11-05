@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3780646106766010254}
   - component: {fileID: 7758689862926094331}
   - component: {fileID: 4193167331775046567}
+  - component: {fileID: 1891461557450038012}
   m_Layer: 0
   m_Name: Thief
   m_TagString: Untagged
@@ -77,6 +78,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1891461557450038012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937362569575141950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c961254816566a429da7f55568ce175, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: Credits
 --- !u!1 &5055039643542280557
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,7 +107,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6062636823333811561
 Transform:
   m_ObjectHideFlags: 0
@@ -340,7 +354,7 @@ AudioSource:
   m_GameObject: {fileID: 6756869688113850114}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 34742751063099291, guid: 8f5ee8484d81765418feecab36f6ce99, type: 2}
   m_audioClip: {fileID: 8300000, guid: 8c52a73e084a7b1489bc533c87797e93, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -354,7 +368,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 7
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -552,8 +566,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.9397, y: -0.053649962, z: 0}
-    m_Extent: {x: 1.0905, y: 1.77595, z: 0}
+    m_Center: {x: 0.9441, y: -0.051, z: 0}
+    m_Extent: {x: 1.0874001, y: 1.7818, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

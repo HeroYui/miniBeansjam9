@@ -81,6 +81,7 @@ public class ThiefController : MonoBehaviour
         if (collidedGameObjects.Any(c => c.CompareTag("Player")))
         {
             Debug.Log("Collided with player.");
+            GetComponent<SceneManagerScript>().PlayGame();
         }
 
         if (isTurning || isInspecting || gameManager.IsConversationInProgress)
