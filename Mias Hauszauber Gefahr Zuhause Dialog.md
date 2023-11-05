@@ -35,8 +35,8 @@ Kondition:Keine/Akt I
 0: Liebes Bücherregal, schau mal, wir müssen dringend ins Schlafzimmer unserer Eltern. Kannst du nicht einen kleinen Schritt zur Seite machen, damit wir vorbeikommen?
 1: Oh, tut mir leid, Fuchsi. Leider bin ich zu schwer und kann mich nicht bewegen. Ich wollte wirklich abnehmen, aber diese neuen Bücher waren einfach zu verlockend.
 0: Wir haben nicht die Zeit dich komplett leerzuräumen. Lass uns einfach deinen Bauch ausräumen. Dann können wir durch dich durchklettern.
-1: Das klingt nach einem guten Plan! Geht vorsichtig, und passt auf euch auf! -> Mia und Fuchsi wissen vom Bücherregal=true; Bücher die zu verteilen sind = 17;
-0: $BücherDieZuVerteielnSind(17) Bücher müssen ausm Regal verschwinden.
+1: Das klingt nach einem guten Plan! Geht vorsichtig, und passt auf euch auf! -> Mia und Fuchsi wissen vom Bücherregal=true; Bücher die zu verteilen sind = 7;
+0: $BücherDieZuVerteielnSind Bücher müssen ausm Regal verschwinden.
 
 ---
 
@@ -81,6 +81,16 @@ Rollenspielanweisungen:Fuchsi(Drängend);
 0: Seit die Beziehung zwischen Quietschie dem Stuhl und dem Esstisch auseinandergeschoben wurde sind beide Beledigte Leberwürste und Stumm
 
 ---
+
+### Titel:Hinter der Schrankwand
+Aktöre:Fuchsi,0;Schrank,1;
+Kondition:Keine/AktI
+Rollenspielanweisungen:Fuchsi(Drängend);Schrank(Rumpelnd aber Gutmütig)
+0: Aaach ja der Schrank ist immer ein gutes Versteck.
+1: Verstecken, argh...noch mehr Gerümpel.
+0: Nein Schrank heute nicht, wir sind auf wichtiger Mission.
+
+---
 ## Ein Bücherwurm wäre Praktisch. (Akt II)
 
 ### Titel: Bücherregal vs Philosophie
@@ -99,8 +109,8 @@ Rollenspielanweisungen: Fuchsi(Drängend);Sofa(relaxed aber lässt sich nicht un
 1: ~Hmmm~ Fuchsi, das ist spannend! Aber bevor wir das machen, die Krümmel pieksen immer so kannst du mal meine ritzen sauber machen?
 0: Machen wir während wir die Bücher in deine Ritzen schieben.
 0: Oh. Was haben wir denn da? Rex der Stegosaurus, das Reittier von Prinzessin Quarkini. Wie kommt der denn hier hin?
-1: ~Hmmm~ ich fühle mich so voll und echt ungemütlich.-> SofaBücher=true;BücherDieZuVerteielnSind-=7;
-0: Kein wunder du bist ja auch mit 7 Büchern gefüllt. Keine Angst später Räumen wir die wieder auf. Jetzt fehlen noch $BücherDieZuVerteielnSind Bücher.
+1: ~Hmmm~ ich fühle mich so voll und echt ungemütlich.-> SofaBücher=true;BücherDieZuVerteielnSind-=3;
+0: Kein wunder du bist ja auch mit 3 Büchern gefüllt. Keine Angst später Räumen wir die wieder auf. Jetzt fehlen noch $BücherDieZuVerteielnSind Bücher.
 1: ~Hmmm~ Das sagt ihr immer.... 
 
 ---
@@ -110,7 +120,7 @@ Aktöre:Fuchsi,0;Sofa,1;
 Kondition: Akt II && SofaBücher=true
 Rollenspielanweisungen: Fuchsi(Drängend);Sofa(relaxed abet etwas betrübt)
 1: ~Hmmm~ So unbequem war ich ja noch nie...
-0: Kein wunder du bist ja auch mit 7 Büchern gefüllt. Keine Angst später Räumen wir die wieder auf. Jetzt fehlen noch $BücherDieZuVerteielnSind Bücher.
+0: Kein wunder du bist ja auch mit 3 Büchern gefüllt. Keine Angst später Räumen wir die wieder auf. Jetzt fehlen noch $BücherDieZuVerteielnSind Bücher.
 
 ---
 
@@ -121,6 +131,18 @@ Rollenspielanweisungen:Fuchsi(Drängend);Stuhl(säufzend schicksal akzeptierend)
 0: Kannst du Bücher für uns verstecken Knarzi?
 1: Na klar! Aber wehe du pupst mich wieder an!
 0: Hmm. Das Buch ist leider immer gut Sichtbar ob auf oder unter dem Stuhl. Kein gutes Versteck.
+
+---
+
+### Titel:Klappe zu Schrank Tot
+Aktöre:Fuchsi,0;Schrank,1;
+Kondition:Akt II && SchrankBücher=false
+Rollenspielanweisungen:Fuchsi(Drängend);Schrank(Rumpelnd aber Gutmütig)
+0: Aaach ja der Schrank ist immer ein gutes Versteck.
+1: Verstecken, argh...noch mehr Gerümpel.
+0: Entschuldige wir stopfen nur schnell ein paar Bücher in dich und machen dann ganz schnell die Tür zu.
+1: Ihr macht waaas? Das geht doch ni.......... -> $BücherDieZuVerteielnSind-= 4; SchrankBücher=true
+0: Sehr gut. Jetzt fehlen noch $BücherDieZuVerteielnSind Bücher.
 
 ---
 
