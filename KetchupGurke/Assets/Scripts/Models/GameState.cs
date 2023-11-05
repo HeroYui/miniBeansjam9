@@ -8,4 +8,6 @@ public class GameState
 
     public int booksToFind;
 
+    public bool SofaBooks;
+
 }

@@ -23,7 +23,7 @@ public class HinterDerSchrankwand : IDialog
 
     public HinterDerSchrankwand()
     {
-        TriggerActor = "BuecherregalInteractableObject";
+        TriggerActor = "SchrankInteractableObject";
         Actors = new List<DialogActor>
         {
             new DialogActor() { name = "Fuchsi" },
