@@ -48,7 +48,10 @@ public class GameManger : MonoBehaviour
     {
         gameState = new GameState();
         dialogs = new List<IDialog>() {
-            new FuchsiErmutigtMiaDialog()
+            new FuchsiErmutigtMiaDialog(),
+            new EineSpannungsgeladeneBegegnung(),
+            new FuchsiUndMiaFindenDasBuecherregalInEinerPrekaerenSituation(),
+            new KissenburgDrama(),
         };
     }
 

@@ -19,12 +19,12 @@ public class FuchsiUndMiaFindenDasBuecherregalInEinerPrekaerenSituation : IDialo
 
     public void UpdateIsCurrentDialog(GameState gameState)
     {
-        IsCurrentDialog = !gameState.initialDialogDone;
+        IsCurrentDialog = !gameState.talkedToBuecherRegalForTheFirstTime;
     }
 
     public FuchsiUndMiaFindenDasBuecherregalInEinerPrekaerenSituation()
     {
-        TriggerActor = "MiaInteractableObject";
+        TriggerActor = "BuecherregalInteractableObject";
         Actors = new List<DialogActor>
         {
             new DialogActor() { name = "Fuchsi" },

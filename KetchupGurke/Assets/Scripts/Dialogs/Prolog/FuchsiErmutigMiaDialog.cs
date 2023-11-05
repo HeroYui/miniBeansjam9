@@ -32,7 +32,7 @@ public class FuchsiErmutigtMiaDialog : IDialog
         {
             new FuchsiErmutigtMiaDialogMessage1(),
             new FuchsiErmutigtMiaDialogMessage2(),
-            new FuchsiErmutigtMiaDialogMessage3(),
+            new FuchsiErmutigtMiaDialogMessage3()
         };
         IsCurrentDialog = true;
     }
