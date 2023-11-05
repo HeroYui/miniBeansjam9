@@ -51,7 +51,7 @@ public class EineSpannungsgeladeneBegegnung1 : IDialogMessage
 
     public EineSpannungsgeladeneBegegnung1()
     {
-        Message = "Hallo Mia, hallo Fuchsi. Sch�n euch zu sehen. Seit ihr wieder da um die Abenteuer der Froschprinzessin Quarkini weiterzulesen?";
+        Message = "Loooos, Kleine! Steck deine Finger in mich rein. Du wirst den Rest deines Lebens an dieses einmalige Erlebnis denken. ~Nihahahaha~";
         ActorId = 1;
     }
 
@@ -70,7 +70,7 @@ public class EineSpannungsgeladeneBegegnung2 : IDialogMessage
 
     public EineSpannungsgeladeneBegegnung2()
     {
-        Message = "Liebes B�cherregal, schau mal, wir m�ssen dringend ins Schlafzimmer unserer Eltern. Kannst du nicht einen kleinen Schritt zur Seite machen, damit wir vorbeikommen?";
+        Message = "Hör nicht auf ihn! Mama sagt, Steckdosen sehen zwar aus wie niedliche Schweineschnauzen von Schweinen, die in den Wänden leben, aber es gibt da keine Schweinchen drinnen und es ist gefährlich die Finger da rein zu stecken. Außerdem wäre es unhöflich! Und was würde nur Prinzessin Quarkini von uns Denken, wenn wir uns auf dieses Niveau herablassen würden?!";
         ActorId = 0;
     }
 

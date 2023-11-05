@@ -55,7 +55,7 @@ public class KlappeZuSchrankTot1 : IDialogMessage
 
     public KlappeZuSchrankTot1()
     {
-        Message = "Aaach ja der Schrank ist immer ein gutes Versteck.";
+        Message = "Aaach ja, der Schrank ist immer ein gutes Versteck.";
         ActorId = 0;
     }
 
@@ -74,7 +74,7 @@ public class KlappeZuSchrankTot2 : IDialogMessage
 
     public KlappeZuSchrankTot2()
     {
-        Message = "Verstecken, argh...noch mehr Gerümpel.";
+        Message = "Verstecken, argh...noch mehr GerÃ¼mpel.";
         ActorId = 1;
     }
 
@@ -92,7 +92,7 @@ public class KlappeZuSchrankTot3 : IDialogMessage
 
     public KlappeZuSchrankTot3()
     {
-        Message = "Entschuldige wir stopfen nur schnell ein paar Bücher in dich und machen dann ganz schnell die Tür zu.";
+        Message = "Entschuldige, wir stopfen nur schnell ein paar BÃ¼cher in dich und machen dann ganz schnell die TÃ¼r zu.";
         ActorId = 0;
     }
 }
@@ -134,7 +134,7 @@ public class KlappeZuSchrankTot5 : IDialogMessage
 
     public KlappeZuSchrankTot5()
     {
-        Message = "Sehr gut. Jetzt fehlen noch {0} Bücher.";
+        Message = "Sehr gut. Jetzt fehlen noch {0} BÃ¼cher.";
         ActorId = 1;
     }
 }

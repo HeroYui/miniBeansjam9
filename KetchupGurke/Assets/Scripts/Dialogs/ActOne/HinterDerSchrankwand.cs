@@ -53,7 +53,7 @@ public class HinterDerSchrankwand1 : IDialogMessage
 
     public HinterDerSchrankwand1()
     {
-        Message = "Aaach ja der Schrank ist immer ein gutes Versteck.";
+        Message = "Aaach ja, der Schrank ist immer ein gutes Versteck!";
         ActorId = 0;
     }
 
@@ -72,7 +72,7 @@ public class HinterDerSchrankwand2 : IDialogMessage
 
     public HinterDerSchrankwand2()
     {
-        Message = "Verstecken, argh...noch mehr Gerümpel.";
+        Message = "Verstecken, argh...noch mehr GerÃ¼mpel.";
         ActorId = 1;
     }
 
@@ -90,7 +90,7 @@ public class HinterDerSchrankwand3 : IDialogMessage
 
     public HinterDerSchrankwand3()
     {
-        Message = "Nein Schrank heute nicht, wir sind auf wichtiger Mission.";
+        Message = "Nein, Schrank heute nicht, wir sind auf wichtiger Mission.";
         ActorId = 1;
     }
 }

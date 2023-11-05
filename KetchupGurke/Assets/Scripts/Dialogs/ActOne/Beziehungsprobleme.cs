@@ -49,7 +49,7 @@ public class Beziehungsprobleme1 : IDialogMessage
 
     public Beziehungsprobleme1()
     {
-        Message = "Seit die Beziehung zwischen Quietschie dem Stuhl und dem Esstisch auseinandergeschoben wurde sind beide Beledigte Leberwürste und Stumm.";
+        Message = "Seit die Beziehung zwischen Quietschie, dem Stuhl, und dem Esstisch auseinandergeschoben wurde, sind beide beleidigte LeberwÃ¼rste und schweigen sich an.";
         ActorId = 0;
     }
 

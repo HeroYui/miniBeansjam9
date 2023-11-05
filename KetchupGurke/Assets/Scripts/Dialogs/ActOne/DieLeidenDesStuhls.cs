@@ -51,7 +51,7 @@ public class DieLeidenDesStuhls1 : IDialogMessage
 
     public DieLeidenDesStuhls1()
     {
-        Message = "Ich bin voll belastet...st‰ndig sitzen Leute auf mir drauf. Vor allem die Glitzersteinchen auf Tante Valentinas Hose lassen mich danach immer so zerdellt aussehen. Etwas wie der Mond.";
+        Message = "Ich bin voll belastet...st√§ndig sitzen Leute auf mir drauf. Vor allem die Glitzersteinchen auf Tante Valentinas Hose lassen mich danach immer so zerdellt aussehen... ein bisschen wie der Mond...";
         ActorId = 1;
     }
 }
@@ -68,7 +68,7 @@ public class DieLeidenDesStuhls2 : IDialogMessage
 
     public DieLeidenDesStuhls2()
     {
-        Message = "Ich glaube nicht, dass und Knarzi der Stuhl helfen kann zu Mama und Papa zu kommen.";
+        Message = "Ich glaube nicht, dass uns Knarzi, der Stuhl helfen kann, zu Mama und Papa zu kommen.";
         ActorId = 0;
     }
 }

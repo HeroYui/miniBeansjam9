@@ -27,7 +27,7 @@ public class Bergsteigen : IDialog
         Actors = new List<DialogActor>
         {
             new DialogActor() { name = "Fuchsi" },
-            new DialogActor() { name = "Bücherregal" },
+            new DialogActor() { name = "BÃ¼cherregal" },
             new DialogActor() { name = "Mia" },
             new DialogActor() { name = "Papa" }
         };
@@ -36,7 +36,8 @@ public class Bergsteigen : IDialog
             new Bergsteigen1(),
             new Bergsteigen2(),
             new BergsteigenEpilog1(),
-            new BergsteigenEpilog2()
+            new BergsteigenEpilog2(),
+            new BergsteigenEpilog3()
         };
         IsCurrentDialog = false;
     }
@@ -56,12 +57,11 @@ public class Bergsteigen1 : IDialogMessage
 
     public Bergsteigen1()
     {
-        Message = "Aaaah ich fühle mich so Frei. Leicht wie ein leeres Bücherregal.";
+        Message = "Aaaah, ich fÃ¼hle mich so frei. Leicht wie ein leeres BÃ¼cherregal!";
         ActorId = 1;
     }
 
 }
-
 
 [System.Serializable]
 public class Bergsteigen2 : IDialogMessage
@@ -75,7 +75,7 @@ public class Bergsteigen2 : IDialogMessage
 
     public Bergsteigen2()
     {
-        Message = "Schnell Mia klettern wir durch das Regal zu Mama und Papa.";
+        Message = "Schnell Mia, klettern wir durch das Regal zu Mama und Papa und Ã¶ffnen die TÃ¼r!";
         ActorId = 0;
     }
 
@@ -98,8 +98,8 @@ public class BergsteigenEpilog1 : IDialogMessage
 
     public BergsteigenEpilog1()
     {
-        Message = "Die Polizei hat den Einbrecher dank deiner Hilfe schnappen können, meine kleine Prinzessin. Wir feiern deine Tapferkeit mit einem Eis und einem Tag im Zoo.";
-        ActorId = 4;
+        Message = "Als Mama und Papa von dem Einbruch erfuren, waren sie heil froh, dass uns nichts passiert ist. AuÃŸerdem riefen sie die Polizei, die dank deiner Hilfe den Einbrecher direkt schnappen konnte, meine kleine Prinzessein! Wir werden deine Tapferkeit mit einem Eis und einem Tag im Zoo.";
+        ActorId = 3;
     }
 
 }
@@ -117,12 +117,31 @@ public class BergsteigenEpilog2 : IDialogMessage
 
     public BergsteigenEpilog2()
     {
-        Message = "Au ja mal schauen was die Tiere so zu erzählen haben...";
-        ActorId = 3;
+        Message = "Au ja! Mal schauen, was die Tiere so zu erzÃ¤hlen haben...";
+        ActorId = 2;
+    }
+
+}
+
+[System.Serializable]
+public class BergsteigenEpilog3 : IDialogMessage
+{
+
+    private string _message;
+    public string Message { get => _message; set => _message = value; }
+
+    private int _actorId;
+    public int ActorId { get => _actorId; set => _actorId = value; }
+
+    public BergsteigenEpilog3()
+    {
+        Message = "";
+        ActorId = 2;
     }
     public bool UpdateGameState(GameState gameState)
     {
-        //ToDo Credits
+        gameState.epilogDurch = true;
         return true;
     }
+
 }

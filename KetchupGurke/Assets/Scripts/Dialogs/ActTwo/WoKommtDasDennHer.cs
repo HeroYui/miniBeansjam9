@@ -57,7 +57,7 @@ public class WoKommtDasDennHer1 : IDialogMessage
 
     public WoKommtDasDennHer1()
     {
-        Message = "Hey, Sofa! Wir müssen Bücher aus dem Regal verstecken, damit der Einbrecher sie nicht sieht.";
+        Message = "Hey, Sofa! Wir mÃ¼ssen BÃ¼cher aus dem Regal verstecken, damit der Einbrecher sie nicht sieht.";
         ActorId = 0;
     }
 
@@ -76,7 +76,7 @@ public class WoKommtDasDennHer2 : IDialogMessage
 
     public WoKommtDasDennHer2()
     {
-        Message = "~Hmmm~ Fuchsi, das ist spannend! Aber bevor wir das machen, die Krümmel pieksen immer so kannst du mal meine ritzen sauber machen?";
+        Message = "~Hmmm~ Fuchsi, das ist spannend! Aber bevor wir das machen: Die KrÃ¼mmel pieksen immer so... Kannst du mal meine Ritzen sauber machen?";
         ActorId = 1;
     }
 
@@ -94,7 +94,7 @@ public class WoKommtDasDennHer3 : IDialogMessage
 
     public WoKommtDasDennHer3()
     {
-        Message = "Machen wir während wir die Bücher in deine Ritzen schieben.";
+        Message = "Machen wir, wÃ¤hrend wir die BÃ¼cher zwischen deine Kissen schieben.";
         ActorId = 0;
     }
 }
@@ -128,7 +128,7 @@ public class WoKommtDasDennHer5 : IDialogMessage
 
     public WoKommtDasDennHer5()
     {
-        Message = "~Hmmm~ ich fühle mich so voll und echt ungemütlich.";
+        Message = "~Hmmm~ ich fÃ¼hle mich so voll und echt ungemÃ¼tlich.";
         ActorId = 1;
     }
     public bool UpdateGameState(GameState gameState)
@@ -151,7 +151,7 @@ public class WoKommtDasDennHer6 : IDialogMessage
 
     public WoKommtDasDennHer6()
     {
-        Message = "Kein wunder du bist ja auch mit 3 Büchern gefüllt. Keine Angst später Räumen wir die wieder auf. Jetzt fehlen noch {0} Bücher";
+        Message = "Kein Wunder, du bist ja auch mit 3 BÃ¼chern gefÃ¼llt! Keine Angst, spÃ¤ter rÃ¤umen wir die wieder auf. Jetzt fehlen noch {0} BÃ¼cher";
         ActorId = 0;
     }
 }

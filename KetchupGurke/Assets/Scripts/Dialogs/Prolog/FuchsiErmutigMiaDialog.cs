@@ -52,7 +52,7 @@ public class FuchsiErmutigtMiaDialogMessage1 : IDialogMessage
 
     public FuchsiErmutigtMiaDialogMessage1()
     {
-        Message = "Mia, hör zu. Wir sind in einer beunruhigenden Situation, das ist wahr, aber du hast die Fähigkeit, dich und deine Familie zu beschützen.";
+        Message = "Mia, hör mal, wir haben 'ne schwierige Situation, aber du kannst das! Du kannst deine Familie schützen.";
         ActorId = 0;
     }
 
@@ -71,7 +71,7 @@ public class FuchsiErmutigtMiaDialogMessage2 : IDialogMessage
 
     public FuchsiErmutigtMiaDialogMessage2()
     {
-        Message = "Hier ist der Plan: Du bleibst leise, versteckst dich und beobachtest weiterhin den Einbrecher. Aber wir dürfen nicht vergessen, dass deine Eltern die ersten sind, die von der Bedrohung erfahren sollten.";
+        Message = "Deine Eltern müssen als Erste davon erfahren, verstehst du? Schleich dich in ihr Zimmer und weck sie auf.";
         ActorId = 0;
     }
 
@@ -89,7 +89,7 @@ public class FuchsiErmutigtMiaDialogMessage3 : IDialogMessage
 
     public FuchsiErmutigtMiaDialogMessage3()
     {
-        Message = "Glaub mir, sie werden alles tun, um uns sicher zu halten. Also, wenn du kannst, schleiche dich in ihr Zimmer und wecke sie. Aber pass auf, nicht gesehen zu werden.";
+        Message = "Aber pass auf, der Einbrecher darf uns nicht sehen. Gemeinsam schaffen wir das! Los geht's!";
         ActorId = 0;
     }
 

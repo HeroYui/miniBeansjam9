@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManger : MonoBehaviour
 {
@@ -78,6 +79,11 @@ public class GameManger : MonoBehaviour
             var currentDialog = dialogs[0];
             dialogManager.OpenDialog(currentDialog, gameState);
             UpdateGameState();
+        }
+
+        if (gameState.epilogDurch)
+        {
+            SceneManager.LoadScene("Credits");
         }
     }
 

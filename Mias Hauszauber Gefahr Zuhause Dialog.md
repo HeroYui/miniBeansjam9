@@ -107,7 +107,7 @@ Kondition: Akt II && SofaBücher=false
 Rollenspielanweisungen: Fuchsi(Drängend);Sofa(relaxed aber lässt sich nicht unter kriegen und weiß was es will)
 0: Hey, Sofa! Wir müssen Bücher aus dem Regal verstecken, damit der Einbrecher sie nicht sieht.
 1: ~Hmmm~ Fuchsi, das ist spannend! Aber bevor wir das machen: Die Krümmel pieksen immer so... Kannst du mal meine Ritzen sauber machen?
-0: Machen wir während wir die Bücher in deine Ritzen schieben. //Satz klingt komisch, aber kein plan
+0: Machen wir, während wir die Bücher zwischen deine Kissen schieben.
 0: Oh. Was haben wir denn da? Rex der Stegosaurus, das Reittier von Prinzessin Quarkini. Wie kommt der denn hier hin?
 1: ~Hmmm~ ich fühle mich so voll und echt ungemütlich.-> SofaBücher=true;BücherDieZuVerteielnSind-=3;
 0: Kein Wunder, du bist ja auch mit 3 Büchern gefüllt! Keine Angst, später räumen wir die wieder auf. Jetzt fehlen noch $BücherDieZuVerteielnSind Bücher.

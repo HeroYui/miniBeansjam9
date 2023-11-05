@@ -27,7 +27,7 @@ public class BuecherregalVsPhilosophie : IDialog
         Actors = new List<DialogActor>
         {
             new DialogActor() { name = "Fuchsi" },
-            new DialogActor() { name = "B�cherregal" }
+            new DialogActor() { name = "Bücherregal" }
         };
         Messages = new List<IDialogMessage>()
         {
@@ -50,7 +50,7 @@ public class BuecherregalVsPhilosophie1 : IDialogMessage
 
     public BuecherregalVsPhilosophie1()
     {
-        Message = "Hallo Mia, hallo Fuchsi. Sch�n euch zu sehen. Seit ihr wieder da um die Abenteuer der Froschprinzessin Quarkini weiterzulesen?";
+        Message = "Jedes Buch, dass ihr aus meinem Bauch entfernt, hinterlässt ein Loch. Doch es wird nie ganz aus meiner Seele verschwinden und gibt so Platz für neue Erfahrungen. Loslassen ist schwer, aber schafft Platz für Neues!";
         ActorId = 1;
     }
 }

@@ -52,7 +52,7 @@ public class Epilog1 : IDialogMessage
 
     public Epilog1()
     {
-        Message = "Die Polizei hat den Einbrecher dank deiner Hilfe schnappen können, meine kleine Prinzessin. Wir feiern deine Tapferkeit mit einem Eis und einem Tag im Zoo.";
+        Message = "Die Polizei hat den Einbrecher dank deiner Hilfe schnappen kï¿½nnen, meine kleine Prinzessin. Wir feiern deine Tapferkeit mit einem Eis und einem Tag im Zoo.";
         ActorId = 1;
     }
 
@@ -71,7 +71,7 @@ public class Epilog2 : IDialogMessage
 
     public Epilog2()
     {
-        Message = "Au ja mal schauen was die Tiere so zu erzählen haben...";
+        Message = "Au ja mal schauen was die Tiere so zu erzÃ¤hlen haben...";
         ActorId = 0;
     }   public bool UpdateGameState(GameState gameState)
     {

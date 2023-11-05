@@ -28,7 +28,7 @@ public class UnbequemesSofa : IDialog
         Actors = new List<DialogActor>
         {
             new DialogActor() { name = "Fuchsi" },
-            new DialogActor() { name = "Sofa" }
+            new DialogActor() { name = "Unbequemes Sofa" }
         };
         Messages = new List<IDialogMessage>()
         {
@@ -72,7 +72,7 @@ public class UnbequemesSofa2 : IDialogMessage
 
     public UnbequemesSofa2()
     {
-        Message = "Kein wunder du bist ja auch mit 3 Büchern gefüllt. Keine Angst später Räumen wir die wieder auf. Jetzt fehlen noch {0} Bücher.";
+        Message = "Kein Wunder, du bist ja auch mit 3 BÃ¼chern gefÃ¼llt! Keine Angst, spÃ¤ter rÃ¤umen wir die wieder auf. Jetzt fehlen noch {0} BÃ¼cher.";
         ActorId = 0;
     }
 }

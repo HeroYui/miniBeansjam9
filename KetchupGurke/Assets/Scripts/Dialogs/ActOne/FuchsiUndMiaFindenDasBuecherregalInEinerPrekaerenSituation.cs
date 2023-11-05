@@ -28,7 +28,7 @@ public class FuchsiUndMiaFindenDasBuecherregalInEinerPrekaerenSituation : IDialo
         Actors = new List<DialogActor>
         {
             new DialogActor() { name = "Fuchsi" },
-            new DialogActor() { name = "Bücherregal" }
+            new DialogActor() { name = "BÃ¼cherregal" }
         };
         Messages = new List<IDialogMessage>()
         {
@@ -57,7 +57,7 @@ public class FuchsiUndMiaFindenDasBuecherregalInEinerPrekaerenSituation1 : IDial
 
     public FuchsiUndMiaFindenDasBuecherregalInEinerPrekaerenSituation1()
     {
-        Message = "Hallo Mia, hallo Fuchsi. Schön euch zu sehen. Seit ihr wieder da um die Abenteuer der Froschprinzessin Quarkini weiterzulesen?";
+        Message = "Hallo Mia & Fuchsi. SchÃ¶n euch zu sehen. Seit ihr wieder da, um die Abenteuer der Froschprinzessin Quarkini zu lesen?";
         ActorId = 1;
     }
 
@@ -76,7 +76,7 @@ public class FuchsiUndMiaFindenDasBuecherregalInEinerPrekaerenSituation2 : IDial
 
     public FuchsiUndMiaFindenDasBuecherregalInEinerPrekaerenSituation2()
     {
-        Message = "Liebes Bücherregal, schau mal, wir müssen dringend ins Schlafzimmer unserer Eltern. Kannst du nicht einen kleinen Schritt zur Seite machen, damit wir vorbeikommen?";
+        Message = "Liebes BÃ¼cherregal, schau mal, wir mÃ¼ssen dringend ins Schlafzimmer unserer Eltern. Kannst du nicht einen kleinen Schritt zur Seite rÃ¼cken, damit wir vorbeikommen?";
         ActorId = 0;
     }
 
@@ -94,7 +94,7 @@ public class FuchsiUndMiaFindenDasBuecherregalInEinerPrekaerenSituation3 : IDial
 
     public FuchsiUndMiaFindenDasBuecherregalInEinerPrekaerenSituation3()
     {
-        Message = "Oh, tut mir leid, Fuchsi. Leider bin ich zu schwer und kann mich nicht bewegen. Ich wollte wirklich abnehmen, aber diese neuen Bücher waren einfach zu verlockend.";
+        Message = "Oh, tut mir leid, Fuchsi. Leider bin ich zu schwer und kann mich nicht bewegen. Ich wollte wirklich abnehmen, aber diese neuen BÃ¼cher waren einfach zu verlockend.";
         ActorId = 1;
     }
 }
@@ -111,7 +111,7 @@ public class FuchsiUndMiaFindenDasBuecherregalInEinerPrekaerenSituation4 : IDial
 
     public FuchsiUndMiaFindenDasBuecherregalInEinerPrekaerenSituation4()
     {
-        Message = "Wir haben nicht die Zeit dich komplett leerzuräumen. Lass uns einfach deinen Bauch ausräumen. Dann können wir durch dich durchklettern.";
+        Message = "Wir haben nicht die Zeit dich komplett leerzurÃ¤umen. Lasst uns einfach ein paar ausrÃ¤umen, dann kÃ¶nnen wir durch dich durchklettern.";
         ActorId = 0;
     }
 
@@ -152,7 +152,7 @@ public class FuchsiUndMiaFindenDasBuecherregalInEinerPrekaerenSituation6 : IDial
 
     public FuchsiUndMiaFindenDasBuecherregalInEinerPrekaerenSituation6()
     {
-        Message = "{0} Bücher müssen ausm Regal verschwinden.";
+        Message = "{0} BÃ¼cher mÃ¼ssen ausm Regal verschwinden.";
         ActorId = 0;
     }
 

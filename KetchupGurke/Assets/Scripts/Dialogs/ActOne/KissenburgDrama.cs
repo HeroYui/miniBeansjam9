@@ -52,7 +52,7 @@ public class KissenburgDrama1 : IDialogMessage
 
     public KissenburgDrama1()
     {
-        Message = "~Hmmm~ Mia es ist aber schon etwas spät um eine Kissenburg aus mir zu bauen.";
+        Message = "~Hmmm~ Mia, es ist aber schon etwas spÃ¤t, um eine Kissenburg aus mir zu bauen.";
         ActorId = 1;
     }
 
@@ -71,7 +71,7 @@ public class KissenburgDrama2 : IDialogMessage
 
     public KissenburgDrama2()
     {
-        Message = "Kissenburgen verteidigen nur gegen Fantasie Drachen. Wir müssen weiter Mama und Papa warnen.";
+        Message = "Kissenburgen verteidigen nur gegen Fantasie-Drachen! Wir mÃ¼ssen weiter Mama und Papa warnen.";
         ActorId = 0;
     }
 }

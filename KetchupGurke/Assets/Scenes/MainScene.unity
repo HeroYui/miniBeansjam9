@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ffdf8fe1a3c853c4bb073aed474fcfec, type: 2}
   m_sharedMaterial: {fileID: 7485326983766959988, guid: ffdf8fe1a3c853c4bb073aed474fcfec, type: 2}
@@ -360,7 +360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogManager: {fileID: 1356855334}
-  bookCounter: {fileID: 0}
+  bookCounter: {fileID: 1515883147}
 --- !u!4 &114086418
 Transform:
   m_ObjectHideFlags: 0
@@ -952,8 +952,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 27.5, y: 33.7}
-  m_SizeDelta: {x: 707.02, y: 136.0083}
+  m_AnchoredPosition: {x: 27.5, y: 99.2}
+  m_SizeDelta: {x: 1009.0541, y: 232.1867}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &829431155
 MonoBehaviour:
@@ -1918,8 +1918,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 144}
-  m_SizeDelta: {x: 1048.57, y: 198.474}
+  m_AnchoredPosition: {x: 0, y: 170}
+  m_SizeDelta: {x: 1048.57, y: 340.17}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1356855332
 MonoBehaviour:
@@ -5211,6 +5211,10 @@ PrefabInstance:
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: 34742751063099291, guid: 8f5ee8484d81765418feecab36f6ce99, type: 2}
+    - target: {fileID: 5055039643542280557, guid: f4fd1e68b639a4d46beced8f4694e099, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

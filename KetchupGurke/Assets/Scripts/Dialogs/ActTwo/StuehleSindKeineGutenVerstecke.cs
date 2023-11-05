@@ -53,7 +53,7 @@ public class StuehleSindKeineGutenVerstecke1 : IDialogMessage
 
     public StuehleSindKeineGutenVerstecke1()
     {
-        Message = "Kannst du Bücher für uns verstecken Knarzi?";
+        Message = "Kannst du BÃ¼cher fÃ¼r uns verstecken, Knarzi?";
         ActorId = 0;
     }
 
@@ -72,7 +72,7 @@ public class StuehleSindKeineGutenVerstecke2 : IDialogMessage
 
     public StuehleSindKeineGutenVerstecke2()
     {
-        Message = "Na klar! Aber wehe du pupst mich wieder an!";
+        Message = "Na klar! Aber wehe, du pupst mich wieder an!";
         ActorId = 1;
     }
 
@@ -90,7 +90,7 @@ public class StuehleSindKeineGutenVerstecke3 : IDialogMessage
 
     public StuehleSindKeineGutenVerstecke3()
     {
-        Message = "Hmm. Das Buch ist leider immer gut Sichtbar ob auf oder unter dem Stuhl. Kein gutes Versteck.";
+        Message = "Hmm. Das Buch ist leider immer gut sichtbar, ob auf oder unter dem Stuhl. Kein gutes Versteck.";
         ActorId = 0;
     }
 }
