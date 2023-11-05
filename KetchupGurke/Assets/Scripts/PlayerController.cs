@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rigidbody2d;
 
-    private ColliderController colliderController;
+    private InteractionColliderController colliderController;
 
     private InteractionCollider interactionCollider;
 
@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
     {
         moveAction = playerInputAction.FindActionMap("Player").FindAction("Move");
         rigidbody2d = GetComponent<Rigidbody2D>();
-        colliderController = GetComponentInChildren<ColliderController>();
+        colliderController = GetComponentInChildren<InteractionColliderController>();
         interactionCollider = GetComponentInChildren<InteractionCollider>();
         gameManager = FindObjectOfType<GameManger>();
     }

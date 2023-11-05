@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ThiefController : MonoBehaviour
@@ -9,16 +10,23 @@ public class ThiefController : MonoBehaviour
 
     public float inspectTime = 0.5f;
 
+    private InteractionColliderController interactionColliderController;
+
     private List<Vector3> path;
 
     private int currentTargetPosIndex = 0;
-    
+
     private bool isTurning = false;
+
     private bool isInspecting = false;
 
     IEnumerator Turn()
     {
         isTurning = true;
+        var nextTarget = path[currentTargetPosIndex];
+        var tpf = transform.position;
+        var nextMovementDir = nextTarget - tpf;
+        interactionColliderController.FacingAngle = Vector2.SignedAngle(transform.right, nextMovementDir);
         yield return new WaitForSeconds(.2f);
         isTurning = false;
     }
@@ -34,6 +42,7 @@ public class ThiefController : MonoBehaviour
 
     void Awake()
     {
+        interactionColliderController = GetComponentInChildren<InteractionColliderController>();
         path = new List<Vector3>();
         var lineRenderer = GetComponentInChildren<LineRenderer>();
         Vector3[] vector3 = new Vector3[lineRenderer.positionCount];
@@ -47,7 +56,8 @@ public class ThiefController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isTurning || isInspecting){
+        if (isTurning || isInspecting)
+        {
             return;
         }
         var step = speed * Time.deltaTime;
