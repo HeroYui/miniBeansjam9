@@ -12,6 +12,8 @@ public class GameManger : MonoBehaviour
 
     private GameState gameState;
 
+    private bool firstDialogWasShown = false;
+
     public bool IsConversationInProgress
     {
         get => dialogManager.IsActive;
@@ -66,6 +68,17 @@ public class GameManger : MonoBehaviour
             new Bergsteigen(),
             new Epilog()
         };
+    }
+
+    void FixedUpdate()
+    {
+        if (!firstDialogWasShown)
+        {
+            firstDialogWasShown = true;
+            var currentDialog = dialogs[0];
+            dialogManager.OpenDialog(currentDialog, gameState);
+            UpdateGameState();
+        }
     }
 
 }
