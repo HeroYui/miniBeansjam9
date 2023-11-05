@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 
     public InputActionAsset playerInputAction;
 
-    private DialogManager dialogManager;
+    private GameManger gameManager;
 
     private InputAction moveAction;
 
@@ -40,12 +40,12 @@ public class PlayerController : MonoBehaviour
         rigidbody2d = GetComponent<Rigidbody2D>();
         colliderController = GetComponentInChildren<ColliderController>();
         interactionCollider = GetComponentInChildren<InteractionCollider>();
-        dialogManager = FindObjectOfType<DialogManager>();
+        gameManager = FindObjectOfType<GameManger>();
     }
 
     void FixedUpdate()
     {
-        if (dialogManager.isActive)
+        if (gameManager.IsConversationInProgress)
             return;
 
         var movementVector = Time.deltaTime * speed * moveAction.ReadValue<Vector2>().normalized;
@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
 
     void OnUse(InputAction.CallbackContext context)
     {
-        if (dialogManager.isActive)
+        if (gameManager.IsConversationInProgress)
             return;
 
         var collidedGameObjects = interactionCollider.collidedGameObjects;
@@ -73,20 +73,17 @@ public class PlayerController : MonoBehaviour
 
     void OnTalk(InputAction.CallbackContext callbackContext)
     {
-        if (!dialogManager.isActive)
+        if (!gameManager.IsConversationInProgress)
         {
             var collidedGameObjects = interactionCollider.collidedGameObjects;
             foreach (var gameObject in collidedGameObjects)
             {
-                if (gameObject.TryGetComponent<DialogTrigger>(out var dialogTrigger))
-                {
-                    dialogManager.OpenDialog(dialogTrigger.messages, dialogTrigger.actors);
-                }
+                gameManager.StartDialogWith(gameObject);
             }
         }
         else
         {
-            dialogManager.NextMessage();
+            gameManager.AdvanceCurrentDialog();
         }
     }
 

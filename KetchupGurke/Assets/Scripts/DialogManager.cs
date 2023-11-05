@@ -1,12 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class DialogManager : MonoBehaviour
 {
-    public InputActionAsset inputActions;
 
     public TMP_Text actorNameText;
 
@@ -14,43 +10,45 @@ public class DialogManager : MonoBehaviour
 
     public RectTransform backgroundBox;
 
-    public bool isActive = false;
+    private bool _isActive;
+    public bool IsActive { get => _isActive; private set => _isActive = value; }
 
-    private List<Message> currentMessages;
+    private IDialogMessage _currentMessage;
+    public IDialogMessage CurrentDialogMessage { get => _currentMessage; private set => _currentMessage = value; }
 
-    private List<Actor> currentActors;
+    private IDialog _currentDialog;
+    public IDialog CurrentDialog { get => _currentDialog; private set => _currentDialog = value; }
 
-    private int activeMessage = 0;
+    private int currentDialogMessageIndex = 0;
 
-    private void DisplayMessage()
+    private void DisplayMessage(GameState gameState)
     {
-        var messageToDisplay = currentMessages[activeMessage];
-        talkingText.text = messageToDisplay.message;
-        actorNameText.text = currentActors[messageToDisplay.actorId].name;
+        CurrentDialogMessage = CurrentDialog.Messages[currentDialogMessageIndex];
+        talkingText.text = CurrentDialogMessage.GetInterpolatedMessage(gameState);
+        actorNameText.text = CurrentDialog.Actors[CurrentDialogMessage.ActorId].name;
     }
 
-    public void OpenDialog(List<Message> messages, List<Actor> actors)
+    public void OpenDialog(IDialog dialog, GameState gameState)
     {
-        currentMessages = messages;
-        currentActors = actors;
-        activeMessage = 0;
-        isActive = true;
+        CurrentDialog = dialog;
+        currentDialogMessageIndex = 0;
+        IsActive = true;
 
-        Debug.Log("Started conversation. Messages: " + messages);
+        Debug.Log("Started conversation. Messages: " + dialog.Messages);
         backgroundBox.LeanScale(Vector3.one, 0.5f).setEaseInOutExpo();
-        DisplayMessage();
+        DisplayMessage(gameState);
     }
 
-    public void NextMessage()
+    public void NextMessage(GameState gameState)
     {
-        activeMessage++;
-        if (activeMessage < currentMessages.Count)
+        currentDialogMessageIndex++;
+        if (currentDialogMessageIndex < CurrentDialog.Messages.Count)
         {
-            DisplayMessage();
+            DisplayMessage(gameState);
         }
         else
         {
-            isActive = false;
+            IsActive = false;
             Debug.Log("Conversation finished!");
             backgroundBox.LeanScale(Vector3.zero, 0.5f).setEaseInOutExpo();
         }
@@ -59,6 +57,7 @@ public class DialogManager : MonoBehaviour
     void Start()
     {
         backgroundBox.transform.localScale = Vector3.zero;
+        IsActive = false;
     }
 
 }

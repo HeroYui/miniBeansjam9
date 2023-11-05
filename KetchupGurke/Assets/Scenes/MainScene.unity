@@ -123,6 +123,51 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &114086416
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 114086418}
+  - component: {fileID: 114086417}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &114086417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114086416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87af7e3458780a649b52af20921ef5a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogManager: {fileID: 1356855334}
+--- !u!4 &114086418
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114086416}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.0369382, y: -0.06718737, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &294000369
 GameObject:
   m_ObjectHideFlags: 0
@@ -839,11 +884,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b652a55df6716f478ad595c12834ed1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputActions: {fileID: 0}
   actorNameText: {fileID: 1435612621}
   talkingText: {fileID: 829431155}
   backgroundBox: {fileID: 1356855331}
-  isActive: 0
 --- !u!1 &1435612619
 GameObject:
   m_ObjectHideFlags: 0
@@ -3303,7 +3346,6 @@ GameObject:
   - component: {fileID: 2038381535}
   - component: {fileID: 2038381536}
   - component: {fileID: 2038381538}
-  - component: {fileID: 2038381539}
   m_Layer: 8
   m_Name: Stone
   m_TagString: Untagged
@@ -3420,30 +3462,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3e9c21a3957ff40ab0314513406df4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2038381539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2038381531}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8a0d770ff08b4e459dffb3230ac8104, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  messages:
-  - actorId: 0
-    message: Hallo, ich bin ein Stein.
-  - actorId: 1
-    message: Hallo, ich bin Mia. Du kannst ja sprechen.
-  - actorId: 0
-    message: Alles nur in deiner Fantasie Kind.
-  - actorId: 1
-    message: :(
-  actors:
-  - name: Stein
-  - name: Mia
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3453,3 +3471,4 @@ SceneRoots:
   - {fileID: 2038381532}
   - {fileID: 1067672551}
   - {fileID: 349133715}
+  - {fileID: 114086418}
