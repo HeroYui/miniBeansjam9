@@ -19,6 +19,10 @@ public class PlayerController : MonoBehaviour
 
     private InteractionCollider interactionCollider;
 
+    private Animator animator;
+
+    private enum MovementState { left, right, up, down, idle }
+
     void OnEnable()
     {
         var playerActionMap = playerInputAction.FindActionMap("Player");
@@ -40,6 +44,7 @@ public class PlayerController : MonoBehaviour
         colliderController = GetComponentInChildren<InteractionColliderController>();
         interactionCollider = GetComponentInChildren<InteractionCollider>();
         gameManager = FindObjectOfType<GameManger>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     void FixedUpdate()
@@ -53,6 +58,37 @@ public class PlayerController : MonoBehaviour
             rigidbody2d.MovePosition(transform.position + (Vector3)movementVector);
             colliderController.FacingAngle = Vector2.SignedAngle(transform.right, movementVector);
         }
+        UpdateAnimation(movementVector);
+    }
+
+    private void UpdateAnimation(Vector2 movementVector)
+    {
+        MovementState state;
+        var directionX = movementVector.x;
+        var directionY = movementVector.y;
+
+        if (directionX > 0f)
+        {
+            state = MovementState.right;
+        }
+        else if (directionX < 0f)
+        {
+            state = MovementState.left;
+        }
+        else if (directionY > 0f)
+        {
+            state = MovementState.up;
+        }
+        else if (directionY < 0f)
+        {
+            state = MovementState.down;
+        }
+        else
+        {
+            state = MovementState.idle;
+        }
+
+        animator.SetInteger("state", (int)state);
     }
 
     void OnTalk(InputAction.CallbackContext callbackContext)
