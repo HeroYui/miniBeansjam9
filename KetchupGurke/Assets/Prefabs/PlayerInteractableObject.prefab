@@ -97,8 +97,8 @@ GameObject:
   - component: {fileID: 6640765020464470511}
   - component: {fileID: 2628411544203501189}
   m_Layer: 8
-  m_Name: InteractableObstacle
-  m_TagString: Untagged
+  m_Name: PlayerInteractableObject
+  m_TagString: Mia
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

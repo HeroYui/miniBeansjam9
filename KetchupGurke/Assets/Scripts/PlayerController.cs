@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -59,7 +60,8 @@ public class PlayerController : MonoBehaviour
         if (!gameManager.IsConversationInProgress)
         {
             var collidedGameObjects = interactionCollider.collidedGameObjects;
-            foreach (var gameObject in collidedGameObjects)
+            var gameObject = collidedGameObjects.FirstOrDefault(c => c.CompareTag("Mia"));
+            if (gameObject != null)
             {
                 gameManager.StartDialogWith(gameObject);
             }

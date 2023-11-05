@@ -23,7 +23,7 @@ public class FuchsiErmutigtMiaDialog : IDialog
 
     public FuchsiErmutigtMiaDialog()
     {
-        TriggerActor = "Stone";
+        TriggerActor = "MiaInteractableObject";
         Actors = new List<DialogActor>
         {
             new() { name = "Fuchsi" }
