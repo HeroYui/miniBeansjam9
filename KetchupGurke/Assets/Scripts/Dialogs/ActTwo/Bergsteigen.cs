@@ -27,12 +27,16 @@ public class Bergsteigen : IDialog
         Actors = new List<DialogActor>
         {
             new DialogActor() { name = "Fuchsi" },
-            new DialogActor() { name = "Bücherregal" }
+            new DialogActor() { name = "Bücherregal" },
+            new DialogActor() { name = "Mia" },
+            new DialogActor() { name = "Papa" }
         };
         Messages = new List<IDialogMessage>()
         {
             new Bergsteigen1(),
-            new Bergsteigen2()
+            new Bergsteigen2(),
+            new BergsteigenEpilog1(),
+            new BergsteigenEpilog2()
         };
         IsCurrentDialog = false;
     }
@@ -82,3 +86,43 @@ public class Bergsteigen2 : IDialogMessage
     }
 }
 
+[System.Serializable]
+public class BergsteigenEpilog1 : IDialogMessage
+{
+
+    private string _message;
+    public string Message { get => _message; set => _message = value; }
+
+    private int _actorId;
+    public int ActorId { get => _actorId; set => _actorId = value; }
+
+    public BergsteigenEpilog1()
+    {
+        Message = "Die Polizei hat den Einbrecher dank deiner Hilfe schnappen können, meine kleine Prinzessin. Wir feiern deine Tapferkeit mit einem Eis und einem Tag im Zoo.";
+        ActorId = 4;
+    }
+
+}
+
+
+[System.Serializable]
+public class BergsteigenEpilog2 : IDialogMessage
+{
+
+    private string _message;
+    public string Message { get => _message; set => _message = value; }
+
+    private int _actorId;
+    public int ActorId { get => _actorId; set => _actorId = value; }
+
+    public BergsteigenEpilog2()
+    {
+        Message = "Au ja mal schauen was die Tiere so zu erzählen haben...";
+        ActorId = 3;
+    }
+    public bool UpdateGameState(GameState gameState)
+    {
+        //ToDo Credits
+        return true;
+    }
+}
