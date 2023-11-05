@@ -63,29 +63,32 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateAnimation(Vector2 movementVector)
     {
-        MovementState state;
         var directionX = movementVector.x;
         var directionY = movementVector.y;
+        var isXMainAxis = Mathf.Abs(directionX) > Mathf.Abs(directionY);
 
-        if (directionX > 0f)
+        MovementState state = MovementState.idle;
+        if (isXMainAxis && movementVector.magnitude > 0)
         {
-            state = MovementState.right;
-        }
-        else if (directionX < 0f)
-        {
-            state = MovementState.left;
-        }
-        else if (directionY > 0f)
-        {
-            state = MovementState.up;
-        }
-        else if (directionY < 0f)
-        {
-            state = MovementState.down;
+            if (directionX > 0f)
+            {
+                state = MovementState.right;
+            }
+            else if (directionX < 0f)
+            {
+                state = MovementState.left;
+            }
         }
         else
         {
-            state = MovementState.idle;
+            if (directionY > 0f)
+            {
+                state = MovementState.up;
+            }
+            else if (directionY < 0f)
+            {
+                state = MovementState.down;
+            }
         }
 
         animator.SetInteger("state", (int)state);

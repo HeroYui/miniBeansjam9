@@ -29,14 +29,10 @@ public class ThiefController : MonoBehaviour
     private Animator animator;
     private enum MovementState { left, right, up, down, idle }
 
-    private Transform lastTransform;
-
     IEnumerator Turn()
     {
         isTurning = true;
-        var nextTarget = path[currentTargetPosIndex];
-        var tpf = transform.position;
-        var nextMovementDir = nextTarget - tpf;
+        var nextMovementDir = GetDeltaVector();
         interactionColliderController.FacingAngle = Vector2.SignedAngle(transform.right, nextMovementDir);
         yield return new WaitForSeconds(.2f);
         isTurning = false;
@@ -45,11 +41,11 @@ public class ThiefController : MonoBehaviour
     IEnumerator Inspect(GameObject otherGameObject)
     {
         isInspecting = true;
-
+        animator.SetInteger("state", (int)MovementState.idle);
         // entferne Tag, damit wir nicht nochmal kollidieren
         var originalGameObjectTag = otherGameObject.tag;
         otherGameObject.tag = otherGameObject.CompareTag("MiaAndThief") ? "Mia" : "Untagged";
-        
+
         // TODO aus dem collider rausholen, wo sich das game object befindet und dann da hindrehen -> oriiginales heading speichern
         Debug.Log("Inspecting Time!");
         yield return new WaitForSeconds(inspectTime);
@@ -68,7 +64,6 @@ public class ThiefController : MonoBehaviour
         interactionColliderController = GetComponentInChildren<InteractionColliderController>();
         interactionCollider = GetComponentInChildren<InteractionCollider>();
         animator = GetComponentInChildren<Animator>();
-        lastTransform = transform;
 
         path = new List<Vector3>();
         var lineRenderer = GetComponentInChildren<LineRenderer>();
@@ -111,45 +106,45 @@ public class ThiefController : MonoBehaviour
             StartCoroutine(Turn());
         }
 
-        
-        UpdateAnimation(getDeltaVector());
-        lastTransform = transform;
-
+        UpdateAnimation(GetDeltaVector());
     }
 
-    private Vector2 getDeltaVector()
+    private Vector2 GetDeltaVector()
     {
-        Vector3 heading = transform.position - lastTransform.position;
-        Vector2 result = new Vector2(heading.x, heading.y);
-        result.Normalize();
-        return result;
+        var nextTarget = path[currentTargetPosIndex];
+        var tpf = transform.position;
+        var nextMovementDir = nextTarget - tpf;
+        return nextMovementDir;
     }
 
     private void UpdateAnimation(Vector2 movementVector)
     {
-        MovementState state;
         var directionX = movementVector.x;
         var directionY = movementVector.y;
+        var isXMainAxis = Mathf.Abs(directionX) > Mathf.Abs(directionY);
 
-        if (directionX > 0f)
+        MovementState state = MovementState.idle;
+        if (isXMainAxis)
         {
-            state = MovementState.right;
-        }
-        else if (directionX < 0f)
-        {
-            state = MovementState.left;
-        }
-        else if (directionY > 0f)
-        {
-            state = MovementState.up;
-        }
-        else if (directionY < 0f)
-        {
-            state = MovementState.down;
+            if (directionX > 0f)
+            {
+                state = MovementState.right;
+            }
+            else if (directionX < 0f)
+            {
+                state = MovementState.left;
+            }
         }
         else
         {
-            state = MovementState.idle;
+            if (directionY > 0f)
+            {
+                state = MovementState.up;
+            }
+            else if (directionY < 0f)
+            {
+                state = MovementState.down;
+            }
         }
 
         animator.SetInteger("state", (int)state);
