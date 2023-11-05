@@ -151,7 +151,7 @@ public class WoKommtDasDennHer6 : IDialogMessage
 
     public WoKommtDasDennHer6()
     {
-        Message = "Kein wunder du bist ja auch mit 3 Büchern gefüllt. Keine Angst später Räumen wir die wieder auf. Jetzt fehlen noch $BooksToFind Bücher";
+        Message = "Kein wunder du bist ja auch mit 3 Büchern gefüllt. Keine Angst später Räumen wir die wieder auf. Jetzt fehlen noch {0} Bücher";
         ActorId = 0;
     }
 }

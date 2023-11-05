@@ -152,7 +152,7 @@ public class FuchsiUndMiaFindenDasBuecherregalInEinerPrekaerenSituation6 : IDial
 
     public FuchsiUndMiaFindenDasBuecherregalInEinerPrekaerenSituation6()
     {
-        Message = "$BooksToFind Bücher müssen ausm Regal verschwinden.";
+        Message = "{0} Bücher müssen ausm Regal verschwinden.";
         ActorId = 0;
     }
 

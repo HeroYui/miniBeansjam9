@@ -1,7 +1,8 @@
+
 using System.Collections.Generic;
 
-    [System.Serializable]
-public class HinterDerSchrankwand : IDialog
+[System.Serializable]
+public class UnbequemesSofa : IDialog
 {
 
     private List<DialogActor> _dialogActors;
@@ -18,31 +19,30 @@ public class HinterDerSchrankwand : IDialog
 
     public void UpdateIsCurrentDialog(GameState gameState)
     {
-        IsCurrentDialog = !gameState.talkedToBuecherRegalForTheFirstTime;
+        IsCurrentDialog = gameState.SofaBooks;
     }
 
-    public HinterDerSchrankwand()
+    public UnbequemesSofa()
     {
-        TriggerActor = "SchrankInteractableObject";
+        TriggerActor = "SofaInteractableObject";
         Actors = new List<DialogActor>
         {
             new DialogActor() { name = "Fuchsi" },
-            new DialogActor() { name = "Schrank" }
+            new DialogActor() { name = "Sofa" }
         };
         Messages = new List<IDialogMessage>()
         {
-            new HinterDerSchrankwand1(),
-            new HinterDerSchrankwand2(),
-            new HinterDerSchrankwand3()
+            new UnbequemesSofa1(),
+            new UnbequemesSofa2()
         };
-        IsCurrentDialog = true;
+        IsCurrentDialog = false;
     }
 
 }
 
 
 [System.Serializable]
-public class HinterDerSchrankwand1 : IDialogMessage
+public class UnbequemesSofa1 : IDialogMessage
 {
 
     private string _message;
@@ -51,46 +51,28 @@ public class HinterDerSchrankwand1 : IDialogMessage
     private int _actorId;
     public int ActorId { get => _actorId; set => _actorId = value; }
 
-    public HinterDerSchrankwand1()
+    public UnbequemesSofa1()
     {
-        Message = "Aaach ja der Schrank ist immer ein gutes Versteck.";
+        Message = "~Hmmm~ So unbequem war ich ja noch nie...";
+        ActorId = 1;
+    }
+
+}
+
+
+[System.Serializable]
+public class UnbequemesSofa2 : IDialogMessage
+{
+
+    private string _message;
+    public string Message { get => _message; set => _message = value; }
+
+    private int _actorId;
+    public int ActorId { get => _actorId; set => _actorId = value; }
+
+    public UnbequemesSofa2()
+    {
+        Message = "Kein wunder du bist ja auch mit 3 Büchern gefüllt. Keine Angst später Räumen wir die wieder auf. Jetzt fehlen noch {0} Bücher.";
         ActorId = 0;
-    }
-
-}
-
-
-[System.Serializable]
-public class HinterDerSchrankwand2 : IDialogMessage
-{
-
-    private string _message;
-    public string Message { get => _message; set => _message = value; }
-
-    private int _actorId;
-    public int ActorId { get => _actorId; set => _actorId = value; }
-
-    public HinterDerSchrankwand2()
-    {
-        Message = "Verstecken, argh...noch mehr Gerümpel.";
-        ActorId = 1;
-    }
-
-}
-
-[System.Serializable]
-public class HinterDerSchrankwand3 : IDialogMessage
-{
-
-    private string _message;
-    public string Message { get => _message; set => _message = value; }
-
-    private int _actorId;
-    public int ActorId { get => _actorId; set => _actorId = value; }
-
-    public HinterDerSchrankwand3()
-    {
-        Message = "Nein Schrank heute nicht, wir sind auf wichtiger Mission.";
-        ActorId = 1;
     }
 }

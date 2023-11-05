@@ -57,6 +57,7 @@ public class GameManger : MonoBehaviour
             new Beziehungsprobleme(),
             new BuecherregalVsPhilosophie(),//Akt2
             new WoKommtDasDennHer(),
+            new UnbequemesSofa(),
         };
     }
 
