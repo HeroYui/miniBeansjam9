@@ -60,7 +60,8 @@ public class GameManger : MonoBehaviour
             new UnbequemesSofa(),
             new StuehleSindKeineGutenVerstecke(),
             new KlappeZuSchrankTot(),
-
+            new Bergsteigen(),
+            new Epilog()
         };
     }
 

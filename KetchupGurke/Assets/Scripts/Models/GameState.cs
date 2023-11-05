@@ -12,4 +12,5 @@ public class GameState
 
     public bool SchrankBooks = false;
 
+    public bool kapitelEpilog = false;
 }

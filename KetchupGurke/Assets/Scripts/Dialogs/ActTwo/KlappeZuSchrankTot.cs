@@ -18,7 +18,7 @@ public class KlappeZuSchrankTot : IDialog
 
     public void UpdateIsCurrentDialog(GameState gameState)
     {
-        IsCurrentDialog = gameState.talkedToBuecherRegalForTheFirstTime&&!gameState.SchrankBooks;
+        IsCurrentDialog = gameState.talkedToBuecherRegalForTheFirstTime && !gameState.SchrankBooks;
     }
 
     public KlappeZuSchrankTot()
