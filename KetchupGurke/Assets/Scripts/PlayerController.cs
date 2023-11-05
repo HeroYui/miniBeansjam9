@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour
     {
         var playerActionMap = playerInputAction.FindActionMap("Player");
         playerActionMap.Enable();
-        playerActionMap.FindAction("Use").performed += OnUse;
         playerActionMap.FindAction("Talk").performed += OnTalk;
     }
 
@@ -30,7 +29,6 @@ public class PlayerController : MonoBehaviour
     {
         var playerActionMap = playerInputAction.FindActionMap("Player");
         playerActionMap.Disable();
-        playerActionMap.FindAction("Use").performed -= OnUse;
         playerActionMap.FindAction("Talk").performed -= OnTalk;
     }
 
@@ -53,21 +51,6 @@ public class PlayerController : MonoBehaviour
         {
             rigidbody2d.MovePosition(transform.position + (Vector3)movementVector);
             colliderController.FacingAngle = Vector2.SignedAngle(transform.right, movementVector);
-        }
-    }
-
-    void OnUse(InputAction.CallbackContext context)
-    {
-        if (gameManager.IsConversationInProgress)
-            return;
-
-        var collidedGameObjects = interactionCollider.collidedGameObjects;
-        foreach (var gameObject in collidedGameObjects)
-        {
-            if (gameObject.TryGetComponent<UsageTrigger>(out var usageTrigger))
-            {
-                usageTrigger.Use();
-            }
         }
     }
 
